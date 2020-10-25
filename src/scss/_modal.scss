@@ -1,0 +1,100 @@
+$modal-transition-duration: 100ms;
+$modal-container-transition-duration: $modal-transition-duration;
+
+.modal-container {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0.8);
+
+	&-enter {
+		opacity: 1;
+	}
+	&-enter-active {
+		opacity: 1;
+		transition: opacity $modal-container-transition-duration ease-in;
+	}
+	&-exit {
+		opacity: 1;
+	}
+	&-exit-active {
+		opacity: 0;
+		transition: opacity $modal-container-transition-duration ease-in;
+	}
+}
+.modal {
+	display: grid;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	gap: 25px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto 50px;
+	grid-template-areas: "modalInput modalInput" "primaryActionBtn secondaryActionBtn";
+	position: fixed;
+	width: 320px;
+	height: 250px;
+	padding: 25px;
+	border-radius: 10px;
+	box-shadow: 0 0 15px 0 #adadad;
+	background-color: #fff;
+	transform-origin: center center;
+
+	&-enter {
+		opacity: 0;
+		transform: scale(0.95) translateY(-25px);
+	}
+
+	&-enter-active {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+		transition: opacity $modal-transition-duration ease-in,
+			transform $modal-transition-duration ease-in;
+	}
+
+	&-enter-done,
+	&-exit {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+	&-exit-active {
+		opacity: 0;
+		transform: scale(0.95) translateY(-25px);
+		transition: opacity $modal-transition-duration ease-in,
+			transform $modal-transition-duration ease-in;
+	}
+
+	textarea {
+		grid-area: modalInput;
+		box-shadow: inset 0 0 5px 0 #adadad;
+		background-color: rgba(128, 128, 128, 0.12);
+		border: none;
+		padding: 5px;
+		resize: none;
+		border-radius: 5px;
+		outline: none;
+	}
+
+	&__action-btn {
+		box-shadow: 0 0 5px 0 #adadad;
+		border-radius: 500px;
+		// text-transform: uppercase;
+
+		&--raised {
+			grid-area: primaryActionBtn;
+			color: #fff;
+			background-color: rgb(26, 72, 255);
+		}
+		&--outlined {
+			grid-area: secondaryActionBtn;
+			border: 1px solid rgb(26, 72, 255);
+			color: rgb(26, 72, 255);
+		}
+	}
+}

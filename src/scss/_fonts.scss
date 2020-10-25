@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap");
+
+body {
+	font-size: 16px;
+}
+body,
+textarea,
+input {
+	font-family: "Open Sans", sans-serif;
+	line-height: 1.5;
+}
+textarea,
+input {
+	font-size: 0.9em;
+}
+button {
+	font-family: "Roboto", sans-serif;
+	font-size: 1em;
+}
