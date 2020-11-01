@@ -5,6 +5,10 @@
 	margin: 0;
 	padding: 0;
 }
+// resetting html and body
+html {
+	overflow: hidden;
+}
 
 // resetting button tag styles for document
 button {
@@ -13,6 +17,5 @@ button {
 	background-color: transparent;
 	outline: none;
 	text-transform: capitalize;
-
 	cursor: pointer;
 }

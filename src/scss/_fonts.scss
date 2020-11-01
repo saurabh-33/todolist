@@ -11,9 +11,12 @@ input {
 }
 textarea,
 input {
-	font-size: 0.9em;
+	font-size: 0.85em;
 }
 button {
 	font-family: "Roboto", sans-serif;
 	font-size: 1em;
+}
+.todo-card__text {
+	font-size: 0.85em;
 }

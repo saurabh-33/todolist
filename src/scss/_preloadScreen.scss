@@ -1,0 +1,46 @@
+.preload-svg-container {
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	place-items: center;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	&-exit {
+		opacity: 1;
+	}
+	&-exit-active {
+		opacity: 0;
+		transition: opacity 300ms;
+	}
+
+	.preload-svg {
+		width: 300px;
+		height: 150px;
+		path {
+			fill: transparent;
+			stroke: $logo-color;
+			stroke-linejoin: round;
+			stroke-miterlimit: 4;
+			stroke-opacity: 1;
+			stroke-dasharray: 798px;
+			stroke-dashoffset: 798px;
+			animation: logoAnimation 3000ms linear forwards;
+		}
+	}
+}
+
+@keyframes logoAnimation {
+	90% {
+		fill: transparent;
+		stroke-dashoffset: 665px;
+		stroke-opacity: 1;
+	}
+	100% {
+		fill: $logo-color;
+		stroke-dashoffset: 665px;
+		stroke-opacity: 0;
+	}
+}
