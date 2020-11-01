@@ -1,0 +1,35 @@
+#root {
+	padding-top: $appbar-height;
+}
+.appbar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: $appbar-height;
+	background-color: $appbar-background-color;
+	box-shadow: 0 3px 20px -5px rgba(0, 0, 0, 0.2);
+	&__items-wrapper {
+		max-width: 500px;
+		height: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 25px 0 25px;
+		margin: 0 auto;
+	}
+	&__logo {
+		width: 127px;
+		height: 32px;
+		fill: $appbar-items-color;
+	}
+	a {
+		text-decoration: none;
+	}
+	&__code-icon {
+		display: inline-block;
+		cursor: pointer;
+		color: $appbar-items-color;
+		font-size: 25px;
+	}
+}

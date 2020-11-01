@@ -89,12 +89,12 @@ $modal-container-transition-duration: $modal-transition-duration;
 		&--raised {
 			grid-area: primaryActionBtn;
 			color: #fff;
-			background-color: rgb(26, 72, 255);
+			background-color: $btn-color;
 		}
 		&--outlined {
 			grid-area: secondaryActionBtn;
-			border: 1px solid rgb(26, 72, 255);
-			color: rgb(26, 72, 255);
+			border: 1px solid $btn-color;
+			color: $btn-color;
 		}
 	}
 }

@@ -4,14 +4,12 @@ $svg-check-tansition-duration: 100ms;
 @mixin common-todo-card-styles {
 	.todo-card {
 		display: flex;
-		// display: grid;
-		// grid-template-columns: ;
 		position: relative;
 		justify-content: space-between;
 		align-items: center;
 		border-radius: 8px;
 		background-color: #fff;
-		box-shadow: 0 0 15px 0 #ccc;
+		box-shadow: 0 0 25px 0px rgba(204, 204, 204, 0.5);
 		margin: 25px;
 		padding: 15px;
 		transform-origin: center top;
@@ -23,15 +21,10 @@ $svg-check-tansition-duration: 100ms;
 		&-enter-active {
 			opacity: 1;
 			transform: scale(1);
-			// transition: opacity $todo-transition-duration;
 			transition: opacity $todo-transition-duration
 					cubic-bezier(0, 0.07, 1, -0.11),
 				transform $todo-transition-duration cubic-bezier(0, 1.15, 1, 0.99);
 		}
-		// &-enter-done {
-		// 	opacity: 1;
-		// 	// height: 60px;
-		// }
 		&-exit {
 			opacity: 1;
 			transform: scale(1);
@@ -39,15 +32,10 @@ $svg-check-tansition-duration: 100ms;
 		&-exit-active {
 			opacity: 0;
 			transform: scale(0.95);
-			// transition: opacity $todo-transition-duration;
 			transition: opacity $todo-transition-duration
 					cubic-bezier(0, 0.07, 1, -0.11),
 				transform $todo-transition-duration cubic-bezier(0, 1.15, 1, 0.99);
 		}
-		// &-exit-done {
-		// 	opacity: 1;
-		// 	height: 60px;
-		// }
 
 		input[type="checkbox"] {
 			display: none;
@@ -61,7 +49,7 @@ $svg-check-tansition-duration: 100ms;
 
 				svg {
 					width: 2em;
-					stroke: rgb(26, 72, 255);
+					stroke: $option-btn-color;
 					stroke-width: 5;
 					fill: white;
 
@@ -76,16 +64,11 @@ $svg-check-tansition-duration: 100ms;
 					}
 				}
 			}
-			// &:checked + label {
-			// 	.svg-checkbox-tick {
-			// 	}
-			// }
 		}
 
 		&__text {
 			display: inline-block;
 			margin: 0 15px;
-			// width: calc(100% - 120px);
 			overflow-wrap: break-word;
 			overflow-y: auto;
 			max-width: 335px;
@@ -103,20 +86,18 @@ $svg-check-tansition-duration: 100ms;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			// padding: 4px;
 			border: none;
 			border-radius: 50%;
 			width: 30px;
 			height: 30px;
-			// margin: 4px;
 			color: #000;
 			background-color: transparent;
 			outline: none;
 			cursor: pointer;
 
 			&.active {
-				background-color: rgba(0, 124, 226, 0.1);
-				color: rgb(26, 72, 255);
+				background-color: $option-btn-background-color;
+				color: $option-btn-color;
 			}
 		}
 	}

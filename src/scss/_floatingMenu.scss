@@ -17,8 +17,8 @@
 		cursor: pointer;
 		&:focus,
 		&:hover {
-			background-color: rgba(26, 72, 255, 0.1);
-			color: rgb(26, 72, 255);
+			background-color: $option-btn-background-color;
+			color: $option-btn-color;
 		}
 	}
 
