@@ -9,7 +9,7 @@ const TodoList = () => {
 	//make sure these values match respective scss values
 	const modalTransitionDuration = 100;
 	const modalContainerTransitionDuration = modalTransitionDuration;
-	const todoTransitionDuration = 250;
+	const todoTransitionDuration = 1000;
 
 	const [doneTodos, setDoneTodos] = useState([]);
 	const [remainingTodos, setRemainingTodos] = useState([]);
