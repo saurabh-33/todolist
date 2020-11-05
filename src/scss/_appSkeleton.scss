@@ -3,6 +3,7 @@
 	height: 100vh;
 	position: relative;
 	overflow: auto;
+	background-color: $app-background-color;
 	& > .checked-todolist,
 	& > .unchecked-todolist,
 	& > .create-todo-btn-container {
