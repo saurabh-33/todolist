@@ -2,13 +2,14 @@
 	padding-top: $appbar-height;
 }
 .appbar {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: $appbar-height;
 	background-color: $appbar-background-color;
 	box-shadow: 0 3px 20px -5px rgba(0, 0, 0, 0.2);
+	z-index: 2;
 	&__items-wrapper {
 		max-width: 500px;
 		width: 100%;

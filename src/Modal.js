@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {escape} from 'html-escaper'
 
 const Modal = (props) => {
 	const [inputText, setInputText] = useState(props.initWithTodo.text);
@@ -31,7 +32,7 @@ const Modal = (props) => {
 				<button
 					className="modal__action-btn modal__action-btn--raised"
 					onClick={(e) => {
-						props.createTodoWithId(props.initWithTodo.id, inputText);
+						props.createTodoWithId(props.initWithTodo.id, escape(inputText));
 						props.toggleCreateModal();
 					}}
 				>
@@ -42,7 +43,7 @@ const Modal = (props) => {
 				<button
 					className="modal__action-btn modal__action-btn--raised"
 					onClick={(e) => {
-						props.editTodoWithId(props.initWithTodo.id, inputText);
+						props.editTodoWithId(props.initWithTodo.id, escape(inputText));
 						props.toggleEditModal();
 					}}
 				>

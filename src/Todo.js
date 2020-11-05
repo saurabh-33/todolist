@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TodoCheckbox from "./TodoCheckbox";
 import TodoMenu from "./TodoMenu";
-
+import {unescape} from 'html-escaper';
 const Todo = ({
 	isDone,
 	text,
@@ -14,7 +14,7 @@ const Todo = ({
 	return (
 		<div id={idValue} className="todo-card">
 			<TodoCheckbox isDone={isDone} handleClick={handleClick} />
-			<div className="todo-card__text">{text}</div>
+			<div className="todo-card__text">{unescape(text)}</div>
 			<TodoMenu 
 				toggleEditModal={toggleEditModal}
 				loadEditModalWithTodo={loadEditModalWithTodo}

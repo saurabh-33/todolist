@@ -1,8 +1,8 @@
 #root {
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	position: relative;
-	overflow: auto;
+	// overflow: hidden;
 	background-color: $app-background-color;
 	& > .checked-todolist,
 	& > .unchecked-todolist,
@@ -13,5 +13,18 @@
 	}
 	& > .create-todo-btn-container {
 		text-align: center;
+	}
+	#create_todo_svg {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		transform: translateY(calc(50vh - 50%));
+		margin: auto;
+		z-index: -1;
+		min-width: 325px;
+		width: 90%;
+		max-width: 500px;
 	}
 }

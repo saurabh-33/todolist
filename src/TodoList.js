@@ -4,12 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./Modal";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+// import { createTodo as CreateTodoSVG } from "./images/createTodo.svg";
 
 const TodoList = () => {
 	//make sure these values match respective scss values
 	const modalTransitionDuration = 100;
 	const modalContainerTransitionDuration = modalTransitionDuration;
-	const todoTransitionDuration = 1000;
+	const todoTransitionDuration = 250;
 
 	const [doneTodos, setDoneTodos] = useState([]);
 	const [remainingTodos, setRemainingTodos] = useState([]);
@@ -56,34 +57,44 @@ const TodoList = () => {
 		return `todo-${remainingTodos.length + doneTodos.length + 1}`;
 	};
 
+	const isTextOnlyWhitespace = (text) => {
+		return text.replace(/\s/g, '').length === 0 
+	}
+
 	const createTodoWithId = (newTodoId, newTodoText) => {
-		setRemainingTodos([
-			...remainingTodos,
-			{
-				id: newTodoId,
-				text: newTodoText,
-			},
-		]);
+		if (!isTextOnlyWhitespace(newTodoText) || newTodoText.length !== 0) {
+			setRemainingTodos([
+				...remainingTodos,
+				{
+					id: newTodoId,
+					text: newTodoText,
+				},
+			]);
+		}
 	};
 	const editTodoWithId = (todoId, newText) => {
-		let isTodoFound = false;
-		let AlteredTodos = remainingTodos.map((todo) => {
-			if (todo.id === todoId) {
-				isTodoFound = true;
-				return { id: todoId, text: newText };
-			}
-			return todo;
-		});
-		if (isTodoFound) {
-			setRemainingTodos(AlteredTodos);
-		} else {
-			AlteredTodos = doneTodos.map((todo) => {
+		if (!isTextOnlyWhitespace(newText) || newText.length !== 0) {
+			let isTodoFound = false;
+			let AlteredTodos = remainingTodos.map(todo => {
 				if (todo.id === todoId) {
+					isTodoFound = true;
 					return { id: todoId, text: newText };
 				}
 				return todo;
 			});
-			setDoneTodos(AlteredTodos);
+			if (isTodoFound) {
+				setRemainingTodos(AlteredTodos);
+			} else {
+				AlteredTodos = doneTodos.map(todo => {
+					if (todo.id === todoId) {
+						return { id: todoId, text: newText };
+					}
+					return todo;
+				});
+				setDoneTodos(AlteredTodos);
+			}
+		} else {
+			deleteTodoWithId(todoId);
 		}
 	};
 

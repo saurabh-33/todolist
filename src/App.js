@@ -9,6 +9,7 @@ const App = () => {
 				<PreloadScreen />
 				<Appbar />
 				<TodoList />
+				<img id='create_todo_svg' src={require('./images/createTodo.svg')} alt='' />
 			</>
 		);
 };
