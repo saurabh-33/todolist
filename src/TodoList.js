@@ -62,7 +62,7 @@ const TodoList = () => {
 	}
 
 	const createTodoWithId = (newTodoId, newTodoText) => {
-		if (!isTextOnlyWhitespace(newTodoText) || newTodoText.length !== 0) {
+		if (!isTextOnlyWhitespace(newTodoText)) {
 			setRemainingTodos([
 				...remainingTodos,
 				{
@@ -73,7 +73,7 @@ const TodoList = () => {
 		}
 	};
 	const editTodoWithId = (todoId, newText) => {
-		if (!isTextOnlyWhitespace(newText) || newText.length !== 0) {
+		if (!isTextOnlyWhitespace(newText)) {
 			let isTodoFound = false;
 			let AlteredTodos = remainingTodos.map(todo => {
 				if (todo.id === todoId) {
