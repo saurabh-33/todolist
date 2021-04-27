@@ -8,7 +8,7 @@ const Appbar = () => {
         <header className='appbar'>
             <div className='appbar__items-wrapper'>
                 <SVGLogo className='appbar__logo' />
-                <a href='#' title='Source code'><FontAwesomeIcon icon={faCode} className='appbar__code-icon' /></a>
+                <a href='https://github.com/saurabh-33/todolist' target='_blank' title='Source code'><FontAwesomeIcon icon={faCode} className='appbar__code-icon' /></a>
             </div>
         </header>
     )
